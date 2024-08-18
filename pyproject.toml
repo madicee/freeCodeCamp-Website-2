@@ -7,7 +7,7 @@ readme = "README.md"
 packages = [{include = "repl_nix_freecodecamp_website"}]
 
 [tool.poetry.dependencies]
-python = ">=3.10.0,<3.12"
+python = ">=3.10.0"
 flask = "^3.0.3"
 
 

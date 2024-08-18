@@ -10,17 +10,25 @@
         height: 360px;
         width: 100%;
         object-fit: cover;
+        margin-bottom: 16px;
       }
     </style>
   </head>
   <body>
+    {% include 'nav.html' %}
+    <img class='img-fluid' id='banner' src='https://026cf210-7d80-4d97-802a-8b436b2748e4-00-2j4yr0s5kjzd8.pike.replit.dev/static/unsplash.jpg' height='300'>
     <div class='container'>
       <h1 class="text-start mt-2 mb-4"">Jovian Careers</h1>
-      <img class='img-fluid' id='banner' src='https://026cf210-7d80-4d97-802a-8b436b2748e4-00-2j4yr0s5kjzd8.pike.replit.dev/static/unsplash.jpg' height='300'>
-      <h2 class="text-start mt-2 mb-4"">About Jovian</h2>
+      <div class='row' style='margin-bottom:16px'>
+        <div class='col-md-6'>
       <p class="lead">
         Lorem ipsum odor amet, consectetuer adipiscing elit. Dignissim velit potenti nulla quis efficitur aenean justo cras lobortis. Eros parturient nisi rutrum vivamus platea hendrerit auctor. Vitae tristique sodales aenean nascetur nibh tortor sollicitudin turpis bibendum. Diam dolor est elit vehicula tellus conubia convallis nec. Habitant quam elementum maecenas, potenti metus dictum. Sagittis senectus dictumst litora nisl turpis molestie vulputate magna.
       </p>
+        </div>
+        <div class='d-none d-md-block col-6'>
+        <img src='/static/people.jpg' style='height:320px; border-radius:4px;'>
+        </div>
+      </div>
       <h2 class="text-start mt-2 mb-4">Job Openings</h2>
       <div>
         {% for job in jobs %}
@@ -29,8 +37,8 @@
       </div>
       <div class='text-center'>
         <button class="btn btn-primary btn-lg">Contact Us</button>
-          <p class='mt-4'>Copyright 2024, Jovian</p>
       </div>
     </div>
+    {% include 'footer.html' %}
   </body>
 </html>
