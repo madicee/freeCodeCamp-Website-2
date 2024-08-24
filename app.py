@@ -11,7 +11,7 @@ def hello_world():
 @app.route("/api/jobs")
 def list_jobs():
   jobs = load_data_from_db()
-  return jsonify(jobs)
+  return jsonify(list(jobs))
 
 if __name__ == "__main__":
   app.run(host='0.0.0.0', debug=True)
