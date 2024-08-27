@@ -17,10 +17,10 @@ def load_job_from_db(id):
     else:
       return rows[0]
 
-def add_application_to_db(job_id, application):
+def add_application_to_db(job_id, data):
   with engine.connect() as conn:
-    query = text("insert into application (job_id, full_name, email, linkedin_url, education, work_experience, resume_url) values (:job_id, :full_name, :email, :linkedin_url, :education, :work_experience, :resume_url)")
-    conn.execute(query, {job_id: job_id, "full_name": application["full_name"], "email": application["email"], "linkedin_url": application["linkedin_url"], "education": application["education"], "work_experience": application["work_experience"], "resume_url": application["resume_url"]})
-  
+    query = text("insert into application job_id, full_name, email, linkedin_url, education, work_experience, resume_url) values (:jobs{{'job_id'}}, :full_name, :email, :linkedin_url, :education, :work_experience, :resume_url)")
+
+    conn.execute(query, {"job_id" : job_id, "full_name": data["full_name"], "email": data["email"], "linkedin_url": data["linkedin_url"], "education": data["education"], "work_experience": data["work_experience"], "resume_url": data["resume_url"]})
   
   
