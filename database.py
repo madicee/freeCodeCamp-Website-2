@@ -1,9 +1,6 @@
 from sqlalchemy import  create_engine, text
-import os
 
-db_connection_string = os.environ['DB_CONNECTION_STRING']
-
-engine = create_engine(db_connection_string)
+engine = create_engine("postgresql+psycopg2://postgres.hvvzxwtydddbnqzuefvx:3956Medisa%@aws-0-ap-south-1.pooler.supabase.com:6543/postgres")
 
 def load_jobs_from_db():
   with engine.connect() as conn:
